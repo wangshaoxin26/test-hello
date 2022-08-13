@@ -13,7 +13,7 @@
 
                 $.ajax({
                     type : 'get',
-                    url : 'http://localhost:5000/query',
+                    url : 'http://testhello-env.eba-m8psn2yf.ap-southeast-1.elasticbeanstalk.com/query',
                     dataType : 'text',
                     data : $('#f1').serialize(),
                     success : function (xmlq) {
@@ -29,9 +29,9 @@
     </script>
 
     <h1>query test demo</h1>
-    <h1>url : 'http://testhello-env.eba-m8psn2yf.ap-southeast-1.elasticbeanstalk.com/query',</h1>
+    <h1>---------------------</h1>
 
-    <form name="f1" id="f1" action="http://localhost:5000/query">
+    <form name="f1" id="f1" action="http://testhello-env.eba-m8psn2yf.ap-southeast-1.elasticbeanstalk.com/query">
         <input type="text" name="id"/>
         <input id="submit" type="button" value="点击，欢迎" />
     </form>
