@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function() {
+            $("#submit").bind("click", function() {
+
+                $.ajax({
+                    type : 'get',
+                    url : 'http://localhost:5000/query',
+                    dataType : 'text',
+                    data : $('#f1').serialize(),
+                    success : function (xmlq) {
+                        alert(xmlq);
+                    },
+                    error : function (xmlq, errq) {
+                        alert(errq);
+                    }
+                });
+
+             });
+        });
+    </script>
+
+    <h1>query test demo</h1>
+    <h1>url : 'http://testhello-env.eba-m8psn2yf.ap-southeast-1.elasticbeanstalk.com/query',</h1>
+
+    <form name="f1" id="f1" action="http://localhost:5000/query">
+        <input type="text" name="id"/>
+        <input id="submit" type="button" value="点击，欢迎" />
+    </form>
+
+</body>
+</html>
